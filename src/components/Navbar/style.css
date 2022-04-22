@@ -1,0 +1,42 @@
+.navMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5vh;
+}
+
+.linkItems {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+.appBar {
+ box-shadow: none;
+ border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+ width: calc(100% -0px);
+ margin-left: 0;
+}
+
+.title {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.toolbar {
+    background-color: #000;
+}
+
+.shoppingcart {
+    color: #fff;
+}
