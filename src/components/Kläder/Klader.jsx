@@ -3,7 +3,7 @@ import React from 'react'
 function Klader() {
   return (
     <div style={{
-      paddingTop: '2em',
+      paddingTop: '20em',
       textAlign: 'center',
       color: 'white',
     }}>

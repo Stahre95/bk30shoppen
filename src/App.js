@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home/Home';
 import Klader from './components/Kläder/Klader';
+import Souvenir from './components/Souvenir/Souvenir';
+import Ovrigt from './components/Övrigt/Ovrigt';
+import KontaktaOss from './components/kontakta-oss/kontaktaOss';
 
 
 function App() {
@@ -14,9 +17,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="klader" element={<Klader />} />
-            <Route path="souvenir" element={<Klader />} />
-            <Route path="ovrigt" element={<Klader />} />
-            <Route path="kontakta-oss" element={<Klader />} />
+            <Route path="souvenir" element={<Souvenir />} />
+            <Route path="ovrigt" element={<Ovrigt />} />
+            <Route path="kontakta-oss" element={<KontaktaOss />} />
         </Routes>
     </Router>
     </>      
