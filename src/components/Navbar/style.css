@@ -1,8 +1,14 @@
-.navMain {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 5vh;
+.homeText {
+    color: #fff;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+.homeLogo {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .linkItems {
@@ -16,18 +22,14 @@
 }
 
 .appBar {
- box-shadow: none;
- border-bottom: 1px solid rgba(0, 0, 0, 0.12);
- width: calc(100% -0px);
- margin-left: 0;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .title {
     flex-grow: 1;
-    align-items: center;
-    justify-content: space-between;
     display: flex;
-    text-decoration: none;
+    align-items: center;
 }
 
 .grow {
