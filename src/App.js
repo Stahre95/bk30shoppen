@@ -6,7 +6,7 @@ import Home from './components/Home/Home';
 import Klader from './components/Kläder/Klader';
 import Souvenir from './components/Souvenir/Souvenir';
 import Ovrigt from './components/Övrigt/Ovrigt';
-import KontaktaOss from './components/kontakta-oss/kontaktaOss';
+import KontaktaOss from './components/kontakta-oss/KontaktaOss';
 
 
 function App() {
