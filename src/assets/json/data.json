@@ -1,6 +1,9 @@
 [
     {
         "klader": {
+            "Header": {
+                "h1": "KLÄDER"
+            },
             "articles": [
                 {
                     "name": "BK30 Hoodie ljusgrå",
@@ -36,7 +39,25 @@
                 }
             ]
         },
+        "souvenir": {
+            "Header": {
+                "h1": "SOUVENIR"
+            },
+            "articles": [
+                {
+                    "name": "",
+                    "id": 1,
+                    "imageUrl": "",
+                    "price": "",
+                    "size": [],
+                    "description": ""
+                }
+            ]
+        },
         "ovrigt": {
+            "Header": {
+                "h1": "ÖVRIGT"
+            },
             "articles": [
                 {
                     "name": "guldkortet",
