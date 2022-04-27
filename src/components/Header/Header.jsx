@@ -1,15 +1,16 @@
 import React from 'react'
 
-function Souvenir() {
+
+function Header({data}) {
   return (
     <div style={{
-        paddingTop: '20em',
+        paddingTop: '15em',
         textAlign: 'center',
         color: 'white',
       }}>
-        DET HÄR ÄR SOUVENIR SIDAN
+        <h1>{data.h1}</h1>
       </div>
   )
 }
 
-export default Souvenir
+export default Header
