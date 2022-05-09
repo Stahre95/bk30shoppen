@@ -8,7 +8,7 @@
                 {
                     "name": "BK30 Hoodie ljusgrå",
                     "id": 1,
-                    "imageUrl": "bk30_logo.png",
+                    "imageUrl": "https://www.bk30.se/images/956/35829/1062953_1024.JPG?v=2021-04-14%2021:06:12",
                     "price": "399 :-",
                     "size": ["xs", "S", "M", "L", "XL"],
                     "description": "Det här är en beställningsvara. BK30 beställer varje måndag och beräknad leveranstid är max 14 dagar"
@@ -16,7 +16,7 @@
                 {
                     "name": "BK30 Hoodie mörkgrå",
                     "id": 2,
-                    "imageUrl": "bk30_logo.png",
+                    "imageUrl": "https://www.bk30.se/images/956/35829/1062954_1024.JPG?v=2021-04-14%2021:07:12",
                     "price": "399 :-",
                     "size": ["xs", "S", "M", "L", "XL"],
                     "description": "Det här är en beställningsvara. BK30 beställer varje måndag och beräknad leveranstid är max 14 dagar"
@@ -24,7 +24,7 @@
                 {
                     "name": "BK30 Hoodie röd",
                     "id": 3,
-                    "imageUrl": "bk30_logo.png",
+                    "imageUrl": "https://www.bk30.se/images/956/35829/1062955_1024.JPG?v=2021-04-14%2021:07:20",
                     "price": "399 :-",
                     "size": ["xs", "S", "M", "L", "XL"],
                     "description": "Det här är en beställningsvara. BK30 beställer varje måndag och beräknad leveranstid är max 14 dagar"
@@ -32,7 +32,7 @@
                 {
                     "name": "BK30 Hoodie svart",
                     "id": 4,
-                    "imageUrl": "bk30_logo.png",
+                    "imageUrl": "https://www.bk30.se/images/956/35829/1062956_1024.JPG?v=2021-04-14%2021:07:28",
                     "price": "399 :-",
                     "size": ["xs", "S", "M", "L", "XL"],
                     "description": "Det här är en beställningsvara. BK30 beställer varje måndag och beräknad leveranstid är max 14 dagar"
@@ -45,10 +45,10 @@
             },
             "articles": [
                 {
-                    "name": "",
+                    "name": "BK30 Buff",
                     "id": 1,
-                    "imageUrl": "",
-                    "price": "",
+                    "imageUrl": "https://www.sveasecurity.se/pub_images/large/SCARF-B.jpg",
+                    "price": "100:-",
                     "size": [],
                     "description": ""
                 }
@@ -62,7 +62,7 @@
                 {
                     "name": "guldkortet",
                     "id": 1,
-                    "imageUrl": "db1ae60d-3752-4f79-8971-06d67626b0e9.png",
+                    "imageUrl": "http://files.builder.misssite.com/db/1a/db1ae60d-3752-4f79-8971-06d67626b0e9.png",
                     "price": "200 :-",
                     "description": "hela summan går oavkortat till klubben! 50% går direkt till BK30 Ungdom och resterande 50% får du själv fördela mellan de lag du vill. Kortet gäller 1 år från det att det aktiveras och erbjudanden gäller fritt antal gånger. Alla erbjudanded hittar du i gulkdkortsappen som du laddar ned kostnadsfritt på App store eller Google Play"
 
