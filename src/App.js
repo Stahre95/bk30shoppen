@@ -9,6 +9,7 @@ import Main from './components/Main/Main';
 
 // data information
 import data from "../src/assets/json/data.json"
+import media from '../src/assets/js/import.js'
 
 
 
@@ -21,9 +22,9 @@ function App() {
         <Navbar />
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="klader" element={<Main data={data[0]} name="klader"/>} />
-            <Route path="souvenir" element={<Main data={data[0]} name="souvenir" />} />
-            <Route path="ovrigt" element={<Main data={data[0]} name="ovrigt" />} />
+            <Route path="klader" element={<Main data={data[0]} name="klader" media={media}/>} />
+            <Route path="souvenir" element={<Main data={data[0]} name="souvenir" media={media} />} />
+            <Route path="ovrigt" element={<Main data={data[0]} name="ovrigt" media={media}/>} />
             <Route path="kontakta-oss" element={<KontaktaOss />} />
         </Routes>
     </Router>

@@ -1,13 +1,10 @@
 import React from 'react'
+import './style.css'
 
 
 function Header({data}) {
   return (
-    <div style={{
-        paddingTop: '15em',
-        textAlign: 'center',
-        color: 'white',
-      }}>
+    <div className='header-content'>
         <h1>{data.h1}</h1>
       </div>
   )
