@@ -22,7 +22,7 @@ function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }
                 ))}
             </Grid>
             <div className="cardDetails">
-                <Typography variant="h4">total: {cart.subtotal.formated_with_code}</Typography>
+                <Typography variant="h4">total: {cart.subtotal.formatted_with_code}</Typography>
                 <div>
                     <Button className="emptyButton" size="large" type="button" variant="contained" color="secondary" onClick={() => emptyCart()}>Töm varukorgen</Button>
                     <Button className="emptyButton" size="large" type="button" variant="contained" color="primary">Till utcheckning</Button>

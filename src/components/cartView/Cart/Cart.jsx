@@ -3,10 +3,6 @@ import React, { useEffect } from 'react'
 
 
 function Cart({ item, removeFromCart, updateQuantity}) {
-
-    useEffect(() => {
-        console.log(item)
-    })
     return (
         <Card>
             <CardMedia image={item.image.url} alt={item.name} className="media" />
