@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } fro
 import { AddShoppingCart } from '@material-ui/icons'
 
 
-function Product({data, product}) {
+function Product({data, product, addToCart}) {
    {if(product.categories[0].name == "Klader" && data.h1 == "KLÄDER") {
     return (
       <Card className ="root">
@@ -25,7 +25,7 @@ function Product({data, product}) {
         </div>
       </CardContent>
       <CardActions disableSpacing className="cardActions">
-        <IconButton aria-label="Add to Cart">
+        <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
@@ -52,7 +52,7 @@ function Product({data, product}) {
         </div>
       </CardContent>
       <CardActions disableSpacing className="cardActions">
-        <IconButton aria-label="Add to Cart">
+      <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
@@ -79,7 +79,7 @@ function Product({data, product}) {
         </div>
       </CardContent>
       <CardActions disableSpacing className="cardActions">
-        <IconButton aria-label="Add to Cart">
+      <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>

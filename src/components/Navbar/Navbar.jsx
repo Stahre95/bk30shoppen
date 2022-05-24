@@ -34,10 +34,11 @@ function Navbar() {
                             <Link to="/kontakta-oss" className="linkItems">
                                 KONTAKTA OSS
                             </Link>
-                            <Link to="/admin" />
                             <IconButton aria-label='Show cart items' color="inherit">
                                 <Badge badgeContent={2} color="secondary">
-                                    <ShoppingCart className='shoppingcart' />
+                                    <Link to="/varukorg">
+                                        <ShoppingCart className='shoppingcart' />
+                                    </Link>
                                 </Badge>
                             </IconButton>
                         </div>
