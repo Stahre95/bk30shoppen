@@ -24,6 +24,8 @@ import { commerce } from './lib/commerce/commerce.js';
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState();
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   //fetch products from commerce API
   const productFetch = async () => {
@@ -68,6 +70,23 @@ function App() {
     setCart(update.cart)
   }
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+
+    setCart(newCart)
+  }
+
+  const handleCheckout = async (receiptId, newOrder) => {
+    try {
+      const incommingOrder = await commerce.checkout.capture(checkoutId, newOrder);
+
+      setOrder(incommingOrder);
+      refreshCart();
+    } catch (error) {
+      setErrorMessage(error.data.error.message)
+    }
+  }
+
   useEffect(() => {
     productFetch();
     cartFetch();
@@ -94,7 +113,7 @@ function App() {
                 removeFromCart={removeFromCart}
                 />}
              />
-             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning"/>} />
+             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} onCaptureCheckout={handleCheckout} error={errorMessage}/>} />
         </Routes>
     </Router>
     </>      

@@ -1,8 +1,68 @@
 import React from 'react'
+import { Typography, Button, Divider } from '@material-ui/core'
+import { Elements, CardElement, ElementsConsumer, CardElement } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
-function PaymentForm() {
+
+
+//component
+import ReviewForm from './ReviewForm'
+
+function PaymentForm({prevStep, receiptId, shippingData, onCaptureCheckout}) {
+  const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY)
+
+  const submitHandle = async (event, elements, stripe) => {
+      event.preventDefault();
+
+      if(!stripe || !elements) return;
+
+      const CardElement = elements.getElement(CardElement);
+
+      const {error, paymentMethod } = await stripe.createPaymentMethod( { type: 'card', card: CardElement });
+
+      if(error) {
+        console.log(error)
+      } else {
+          const orderDetails = {
+            items: receiptId.live.line_items,
+            customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email},
+            shipping: { name: "Primary", adress: shippingData.adress, city: shippingData.city, county: shippingData.shippingSubDivision, postalCode: shippingData.zip, country: shippingData.country},
+            fulfillment: { shipping_method: shippingData.shippingOption },
+            payment: {
+              gateway: 'stripe',
+              stripe: {
+                payment_method_id: paymentMethod.id
+              }
+            }
+          }
+
+          onCaptureCheckout(checkouttoken.id, orderDetails);
+          nextStep();
+      }
+  }
+
   return (
-    <div>PaymentForm</div>
+    <>
+      <ReviewForm receiptId={receiptId} />
+      <Divider />
+      <Typography variant="h6" gutterBottom style={{ margin: '20px 0'}}>Betalningsmetod</Typography>
+      <Elements stripe={stripePromise}>
+          <ElementsConsumer>
+            {({ elements, stripe}) => (
+              <form onSubmit={(e) => submitHandle(e, elements, stripe)}>
+                <CardElement />
+                <br /> <br />
+                <div style={{ display: 'flex', justifyContent: 'space-between'}}>
+                  <Button variant="outlined" onClick={prevStep}>Tillbaka</Button>
+                  <Button type="submit" variant="contained" disabled={!stripe} color="primary">
+                    Betala { receiptId.live.subtotal.formatted_with_code }
+                  </Button>
+                </div>
+              </form>
+            )}
+          </ElementsConsumer>
+      </Elements>
+    </>
   )
 }
 
