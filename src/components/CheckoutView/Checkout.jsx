@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button, CssBaseline } from '@material-ui/core';
 import { commerce } from '../../lib/commerce/commerce.js'
 
@@ -15,6 +15,8 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
     const [isFinished, setIsFinished] = useState(false)
     const steps = ['Leveranssätt', 'Betalning'];
 
+    const navigate = useNavigate();
+
     
 
     useEffect(() => {
@@ -23,13 +25,14 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
                 const receipt = await commerce.checkout.generateToken(cart.id, {type: 'cart' });
                 setReceiptId(receipt);
             } catch (error) {
-                
+                navigate('/')
             }
         }
 
         generateReceiptId();
     }, [cart])
 
+ 
     const next = (data) => {
         setShippingData(data);
         nextStep();
@@ -46,7 +49,7 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
     }
 
     //confirmation of purchase view
-    const Confirmation = () => order.customer ? (
+    const Confirmation = () => (order.customer ? (
         <>
             <div>
                 <Typography variant="h5">Thank you for your purchase, {order.customer.firstname} {order.customer.lastname} </Typography>
@@ -71,7 +74,7 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
         <div className="spinner">
             <CircularProgress />
         </div>
-    )
+    ));
         
     
 
