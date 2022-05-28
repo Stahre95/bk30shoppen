@@ -78,7 +78,7 @@ function App() {
 
   const handleCheckout = async (receiptId, newOrder) => {
     try {
-      const incommingOrder = await commerce.checkout.capture(checkoutId, newOrder);
+      const incommingOrder = await commerce.checkout.capture(receiptId, newOrder);
 
       setOrder(incommingOrder);
       refreshCart();
@@ -113,7 +113,7 @@ function App() {
                 removeFromCart={removeFromCart}
                 />}
              />
-             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} onCaptureCheckout={handleCheckout} error={errorMessage}/>} />
+             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} handleCheckout={handleCheckout} error={errorMessage}/>} />
         </Routes>
     </Router>
     </>      

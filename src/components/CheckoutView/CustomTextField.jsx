@@ -13,6 +13,7 @@ function CustomTextField({name, label, required}) {
             control={control}
             fullWidth
             name={name}
+            defaultValue=""
         />
     </Grid>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, Button, Divider } from '@material-ui/core'
-import { Elements, CardElement, ElementsConsumer, CardElement } from '@stripe/react-stripe-js';
+import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
 
@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js';
 //component
 import ReviewForm from './ReviewForm'
 
-function PaymentForm({prevStep, receiptId, shippingData, onCaptureCheckout}) {
+function PaymentForm({prevStep, receiptId, shippingData, handleCheckout, nextStep, timeout}) {
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY)
 
   const submitHandle = async (event, elements, stripe) => {
@@ -16,9 +16,9 @@ function PaymentForm({prevStep, receiptId, shippingData, onCaptureCheckout}) {
 
       if(!stripe || !elements) return;
 
-      const CardElement = elements.getElement(CardElement);
+      const cardElement = elements.getElement(CardElement);
 
-      const {error, paymentMethod } = await stripe.createPaymentMethod( { type: 'card', card: CardElement });
+      const {error, paymentMethod } = await stripe.createPaymentMethod( { type: 'card', card: cardElement });
 
       if(error) {
         console.log(error)
@@ -36,7 +36,8 @@ function PaymentForm({prevStep, receiptId, shippingData, onCaptureCheckout}) {
             }
           }
 
-          onCaptureCheckout(checkouttoken.id, orderDetails);
+          handleCheckout(receiptId.id, orderDetails);
+          timeout();
           nextStep();
       }
   }
