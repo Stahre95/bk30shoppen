@@ -57,7 +57,7 @@ function App() {
   }
 
   //empty cart
-  const emptyCart = async (productId, quantity) => {
+  const emptyCart = async () => {
     const empty = await commerce.cart.empty();
 
     setCart(empty.cart);
@@ -79,8 +79,9 @@ function App() {
   const handleCheckout = async (receiptId, newOrder) => {
     try {
       const incommingOrder = await commerce.checkout.capture(receiptId, newOrder);
-
+     
       setOrder(incommingOrder);
+
       refreshCart();
     } catch (error) {
       setErrorMessage(error.data.error.message)

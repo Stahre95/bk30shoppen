@@ -5,6 +5,7 @@ import { commerce } from '../../lib/commerce/commerce.js';
 //components
 import CustomTextField from './CustomTextField';
 import { Link } from 'react-router-dom';
+import { Receipt } from '@material-ui/icons';
 
 function AdressForm({ next, receiptId }) {
     const [shippingCountries, setShippingCountries] = useState([]);
@@ -31,6 +32,13 @@ function AdressForm({ next, receiptId }) {
         setShippingSubDivision(Object.keys(response.subdivisions)[0])
     }
 
+    const shippingOptionsFetch = async (receiptId, country, stateProvince = null) => {
+        const options = await commerce.checkout.getShippingOptions(receiptId, { country, region: stateProvince });
+
+        setShippingOptions(options)
+        setShippingOption(options[0].id)
+    }
+
     useEffect(() => {
         shippingCountriesFetch(receiptId.id);
     }, [])
@@ -38,16 +46,20 @@ function AdressForm({ next, receiptId }) {
     useEffect(() => {
         if (shippingCountry) subDivisionsFetch(shippingCountry);
     }, [shippingCountry]);
+
+    useEffect(() => {
+        if (shippingSubDivision) shippingOptionsFetch(receiptId.id, shippingCountry, shippingSubDivision);
+    }, [shippingSubDivision]);
     return (
         <>
             <Typography variant="h6" gutterBottom>Leverans Adress</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubDivision}))}>
+                <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubDivision, shippingOption }))}>
                     <Grid container spacing={3}>
                         <CustomTextField required name="firstName" label='Förnamn' />
                         <CustomTextField required name="lastName" label='Efternamn' />
                         <CustomTextField required name="Adress" label='Address' />
-                        <CustomTextField required name="email " label='Email' />
+                        <CustomTextField required name="email" label='Email' />
                         <CustomTextField required name="city" label='Stad' />
                         <CustomTextField required name="zip" label='postnummer' />
                         <Grid item xs={12} sm={6}>
@@ -64,6 +76,16 @@ function AdressForm({ next, receiptId }) {
                             <InputLabel>Län</InputLabel>
                             <Select value={shippingSubDivision} fullWidth onChange={(e) => setShippingSubDivision(e.target.value)}>
                                 {Object.entries(shippingSubDivisions).map(([code, name]) => ({ id: code, label: name })).map((item) => (
+                                    <MenuItem key={item.id} value={item.id}>
+                                        {item.label}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <InputLabel>Leverans</InputLabel>
+                            <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
+                                {shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_code})` })).map((item) => (
                                     <MenuItem key={item.id} value={item.id}>
                                         {item.label}
                                     </MenuItem>
