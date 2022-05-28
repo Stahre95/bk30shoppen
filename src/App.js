@@ -8,7 +8,7 @@ import KontaktaOss from './components/kontakta-oss/kontaktaOss';
 import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar';
 import CartView from './components/cartView/CartView';
-import Checkout from './components/CheckoutView/Checkout';
+import Checkout from './components/CheckoutView/checkout/Checkout.jsx';
 
 // data information
 import data from "../src/assets/json/data.json";
