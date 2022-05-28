@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button, CssBaseline } from '@material-ui/core';
 import { commerce } from '../../../lib/commerce/commerce.js'
 
-import '../checkout/style.css'
+import useStyles from './styles';
 
 //component
 import Header from '../../Header/Header';
@@ -18,6 +18,7 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
     const steps = ['Leveranssätt', 'Betalning'];
 
     const navigate = useNavigate();
+    const classes = useStyles();
 
     
 
@@ -55,7 +56,7 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
         <>
             <div>
                 <Typography variant="h5">Thank you for your purchase, {order.customer.firstname} {order.customer.lastname} </Typography>
-                <Divider className="divider" />
+                <Divider className={classes.divider}/>
                 <Typography variant="subtitle2">Order ref: {order.customer.reference}</Typography>
             </div>
             <br />
@@ -66,14 +67,14 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
         <>
         <div>
             <Typography variant="h5">Thank you for your purchase</Typography>
-            <Divider className="divider" />
+            <Divider className={classes.divider} />
             <Typography variant="subtitle2">Order ref: test order </Typography>
         </div>
         <br />
         <Button component={Link} to="/" variant="outlined" type="button">Tillbaka till startsidan</Button>
         </>
     ) : (
-        <div className="spinner">
+        <div className={classes.spinner}>
             <CircularProgress />
         </div>
     ));
@@ -89,9 +90,9 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
     <>
     <CssBaseline />
         <Header data={data[name].Header}/>
-        <main className="layout">
-            <Paper className="paper">
-                <Stepper activeStep={activeStep} className="stepper">
+        <main className={classes.layout}>
+            <Paper className={classes.paper}>
+                <Stepper activeStep={activeStep} className={classes.stepper}>
                     {steps.map((step) => (
                         <Step key={step}>
                             <StepLabel>{step}</StepLabel>

@@ -31,9 +31,9 @@ function Navbar() {
                             <Link to="/ovrigt" className="linkItems">
                                 ÖVRIGT
                             </Link>
-                            <Link to="/kontakta-oss" className="linkItems">
+                            {/* <Link to="/kontakta-oss" className="linkItems">
                                 KONTAKTA OSS
-                            </Link>
+                            </Link> */}
                             <IconButton aria-label='Show cart items' color="inherit">
                                 <Badge badgeContent={2} color="secondary">
                                     <Link to="/varukorg">

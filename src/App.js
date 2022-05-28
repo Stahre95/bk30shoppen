@@ -100,9 +100,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="klader" element={<Main data={data[0]} name="klader" media={media} products={products} addToCart={addToCart}/>} />
-            <Route path="souvenir" element={<Main data={data[0]} name="souvenir" media={media} products={products} />} />
-            <Route path="ovrigt" element={<Main data={data[0]} name="ovrigt" media={media} products={products} />}/>
-            <Route path="kontakta-oss" element={<KontaktaOss />} />
+            <Route path="souvenir" element={<Main data={data[0]} name="souvenir" media={media} products={products} addToCart={addToCart} />} />
+            <Route path="ovrigt" element={<Main data={data[0]} name="ovrigt" media={media} products={products} addToCart={addToCart}/>}/>
+            {/* <Route path="kontakta-oss" element={<KontaktaOss />} /> */}
             <Route path="varukorg" 
                element={<CartView 
                 data={data[0]} 

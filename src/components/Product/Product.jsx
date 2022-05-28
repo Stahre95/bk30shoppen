@@ -1,88 +1,85 @@
-import React, { useEffect } from 'react'
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons'
-
+import React from 'react'
+import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
+import useStyles from './styles';
 
 function Product({data, product, addToCart}) {
-   {if(product.categories[0].name == "Klader" && data.h1 == "KLÄDER") {
+  const classes = useStyles();
+
+   if(product.categories[0].name === "Klader" && data.h1 === "KLÄDER") {
     return (
-      <Card className ="root">
+      <Card className ={classes.root}>
       <CardMedia 
-        className="media"
+        className={classes.media}
+        component="img"
+        height="260px"
+        image={product.image.url}
+        alt="image of BK30 Hoodie"
+       />
+      <CardContent>
+        <div className={classes.cardContent}>
+          <Typography variant="overline">
+              {product.name}
+          </Typography>
+          <Typography variant="overline">
+              {product.price.formatted_with_code}
+          </Typography>
+        </div>
+      </CardContent>
+      <CardActions  className={classes.cardActions}>
+        <Button size="small" variant="contained" color="primary" fullWidth onClick={() => addToCart(product.id, 1)}>Lägg i varukorg</Button>
+      </CardActions>
+  </Card>
+    )
+  } else if(product.categories[0].name === "souvenir" && data.h1 === "SOUVENIR") {
+    console.log(product.id)
+    return (
+      <Card className ={classes.root}>
+      <CardMedia 
+        className={classes.media}
         component="img"
         image={product.image.url}
         alt="image of BK30 Hoodie"
        />
       <CardContent>
-        <div className="cardContent">
-          <Typography variant="h6" gutterBottom>
+      <div className={classes.cardContent}>
+          <Typography variant="overline">
               {product.name}
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="overline">
               {product.price.formatted_with_code}
           </Typography>
         </div>
       </CardContent>
-      <CardActions disableSpacing className="cardActions">
-        <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
-          <AddShoppingCart />
-        </IconButton>
+      <CardActions  className={classes.cardActions}>
+        <Button size="small" variant="contained" color="primary" fullWidth onClick={() => addToCart(product.id, 1)}>Lägg i varukorg</Button>
       </CardActions>
   </Card>
     )
-  } else if(product.categories[0].name == "souvenir" && data.h1 == "SOUVENIR") {
+  } else if(product.categories[0].name === "Ovrigt" && data.h1 === "ÖVRIGT") {
     return (
-      <Card className ="root">
+      <Card className ={classes.root}>
       <CardMedia 
-        className="media"
+        className={classes.media}
         component="img"
         image={product.image.url}
         alt="image of BK30 Hoodie"
        />
       <CardContent>
-        <div className="cardContent">
-          <Typography variant="h6" gutterBottom>
+      <div className={classes.cardContent}>
+          <Typography variant="overline">
               {product.name}
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="overline">
               {product.price.formatted_with_code}
           </Typography>
         </div>
       </CardContent>
-      <CardActions disableSpacing className="cardActions">
-      <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
-          <AddShoppingCart />
-        </IconButton>
+      <CardActions  className={classes.cardActions}>
+        <Button size="small" variant="contained" color="primary" fullWidth onClick={() => addToCart(product.id, 1)}>Lägg i varukorg</Button>
       </CardActions>
   </Card>
     )
-  } else if(product.categories[0].name == "Ovrigt" && data.h1 == "ÖVRIGT") {
-    return (
-      <Card className ="root">
-      <CardMedia 
-        className="media"
-        component="img"
-        image={product.image.url}
-        alt="image of BK30 Hoodie"
-       />
-      <CardContent>
-        <div className="cardContent">
-          <Typography variant="h6" gutterBottom>
-              {product.name}
-          </Typography>
-          <Typography variant="h6">
-              {product.price.formatted_with_code}
-          </Typography>
-        </div>
-      </CardContent>
-      <CardActions disableSpacing className="cardActions">
-      <IconButton aria-label="Add to Cart" onClick={() => addToCart(product.id, 1)}>
-          <AddShoppingCart />
-        </IconButton>
-      </CardActions>
-  </Card>
-    )
-  }} 
+  } 
   
 }
 

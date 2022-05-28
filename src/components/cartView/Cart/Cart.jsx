@@ -1,19 +1,19 @@
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core'
 import React, { useEffect } from 'react'
 
-import '../Cart/style.css';
+import useStyles from './styles';
 
 
 function Cart({ item, removeFromCart, updateQuantity}) {
+    const classes = useStyles();
     return (
         <Card>
-            <CardMedia image={item.image.url} alt={item.name} className="media" component="img" />
-            <CardContent className="cardContent">
-                <Typography variant="h6">{item.name}</Typography>
-                <Typography variant="h6">{item.line_total.formatted_with_code}</Typography>
+            <CardContent className={classes.cardContent}>
+                <Typography variant="underline">{item.name}</Typography>
+                <Typography variant="underline">{item.line_total.formatted_with_code}</Typography>
             </CardContent>
-            <CardActions className="cartActions">
-                <div className="buttons">
+            <CardActions className={classes.CardActions}>
+                <div className={classes.buttons}>
                     <Button type="button" size="small" onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</Button>
                     <Typography>{item.quantity}</Typography>
                     <Button type="button" size="small" onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</Button>
