@@ -2,11 +2,10 @@ import React, { useEffect } from 'react'
 import Header from '../Header/Header'
 import Cart from './Cart/Cart'
 import { Container, Typography, Button, Grid} from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }) {
-    useEffect(() => {
-        console.log(cart)
-    })
+   
 
     const EmptyCart = () => (
         <Typography variant="subtitle1">Du har inga artiklar i din varukorg, börja med att lägga till några!</Typography>
@@ -22,10 +21,10 @@ function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }
                 ))}
             </Grid>
             <div className="cardDetails">
-                <Typography variant="h4">total: {cart.subtotal.formated_with_code}</Typography>
+                <Typography variant="h4">total: {cart.subtotal.formatted_with_code}</Typography>
                 <div>
                     <Button className="emptyButton" size="large" type="button" variant="contained" color="secondary" onClick={() => emptyCart()}>Töm varukorgen</Button>
-                    <Button className="emptyButton" size="large" type="button" variant="contained" color="primary">Till utcheckning</Button>
+                    <Button component={Link} to="/utcheckning" className="emptyButton" size="large" type="button" variant="contained" color="primary">Till utcheckning</Button>
                 </div>
             </div>
         </>

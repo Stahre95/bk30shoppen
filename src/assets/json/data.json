@@ -19,6 +19,11 @@
             "Header": {
                 "h1": "VARUKORG"
             }
+        },
+        "utcheckning": {
+            "Header": {
+                "h1": "UTCHECKNING"
+            }
         }
         
     }
