@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Cart from './Cart/Cart'
 import { Container, Typography, Button, Grid} from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import '../cartView/style.css'
 
 function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }) {
    
@@ -34,7 +35,7 @@ function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }
   return (
         <Container>
             <Header data={data[name].Header}/>
-            <Typography className="title" variant="h3" gutterBottom>Din Varukorg</Typography>
+            <Typography className="title" variant="h5" gutterBottom>Din Varukorg</Typography>
             {!cart.line_items.length ? <EmptyCart /> : <ItemsInCart />}
         </Container>
   )

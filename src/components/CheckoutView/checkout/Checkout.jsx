@@ -1,12 +1,14 @@
 import React, { useEffect, useState} from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button, CssBaseline } from '@material-ui/core';
-import { commerce } from '../../lib/commerce/commerce.js'
+import { commerce } from '../../../lib/commerce/commerce.js'
+
+import '../checkout/style.css'
 
 //component
-import Header from '../Header/Header';
-import AdressForm from './AdressForm';
-import PaymentForm from './PaymentForm';
+import Header from '../../Header/Header';
+import AdressForm from '../AdressForm';
+import PaymentForm from '../PaymentForm';
 
 function Checkout({data, name, cart, order, handleCheckout, error}) {
     const [activeStep, setActivestep] = useState(0);

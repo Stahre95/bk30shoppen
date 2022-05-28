@@ -10,16 +10,15 @@ function Product({data, product, addToCart}) {
       <CardMedia 
         className="media"
         component="img"
-        height="100%"
         image={product.image.url}
         alt="image of BK30 Hoodie"
        />
       <CardContent>
         <div className="cardContent">
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h6" gutterBottom>
               {product.name}
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">
               {product.price.formatted_with_code}
           </Typography>
         </div>
@@ -37,16 +36,15 @@ function Product({data, product, addToCart}) {
       <CardMedia 
         className="media"
         component="img"
-        height="100%"
         image={product.image.url}
         alt="image of BK30 Hoodie"
        />
       <CardContent>
         <div className="cardContent">
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h6" gutterBottom>
               {product.name}
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">
               {product.price.formatted_with_code}
           </Typography>
         </div>
@@ -64,16 +62,15 @@ function Product({data, product, addToCart}) {
       <CardMedia 
         className="media"
         component="img"
-        height="100%"
         image={product.image.url}
         alt="image of BK30 Hoodie"
        />
       <CardContent>
         <div className="cardContent">
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h6" gutterBottom>
               {product.name}
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">
               {product.price.formatted_with_code}
           </Typography>
         </div>
