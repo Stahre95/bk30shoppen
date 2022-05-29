@@ -23,7 +23,7 @@ import { commerce } from './lib/commerce/commerce.js';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -91,12 +91,13 @@ function App() {
   useEffect(() => {
     productFetch();
     cartFetch();
+    console.log(cart)
   }, [])
   
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar totalItemsInCart={cart.total_items}/>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="klader" element={<Main data={data[0]} name="klader" media={media} products={products} addToCart={addToCart}/>} />

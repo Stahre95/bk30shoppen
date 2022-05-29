@@ -6,7 +6,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import media from '../../assets/js/import'
 import "../Navbar/style.css"
 
-function Navbar() {
+function Navbar({totalItemsInCart}) {
     return (
         <>
             <div className="navMain">
@@ -35,7 +35,7 @@ function Navbar() {
                                 KONTAKTA OSS
                             </Link> */}
                             <IconButton aria-label='Show cart items' color="inherit">
-                                <Badge badgeContent={2} color="secondary">
+                                <Badge badgeContent={totalItemsInCart} color="secondary">
                                     <Link to="/varukorg">
                                         <ShoppingCart className='shoppingcart' />
                                     </Link>
