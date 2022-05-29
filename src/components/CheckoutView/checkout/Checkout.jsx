@@ -10,7 +10,7 @@ import Header from '../../Header/Header';
 import AdressForm from '../AdressForm';
 import PaymentForm from '../PaymentForm';
 
-function Checkout({data, name, cart, order, handleCheckout, error}) {
+function Checkout({data, name, cart, order, handleCheckout, error, refreshCart}) {
     const [activeStep, setActivestep] = useState(0);
     const [receiptId, setReceiptId] = useState(null);
     const [shippingData, setShippingData] = useState({})
@@ -60,7 +60,7 @@ function Checkout({data, name, cart, order, handleCheckout, error}) {
                 <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
             </div>
             <br />
-            <Button component={Link} to="/" variant="outlined" type="button">Tillbaka till startsidan</Button>
+            <Button component={Link} to="/" variant="outlined" type="button" onClick={() => refreshCart()}>Tillbaka till startsidan</Button>
         </>
     ) : isFinished ? ( 
         //display confirmation view for testing purposes only

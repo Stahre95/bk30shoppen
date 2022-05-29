@@ -81,17 +81,21 @@ function App() {
       const incommingOrder = await commerce.checkout.capture(receiptId, newOrder);
      
       setOrder(incommingOrder);
-
-      refreshCart();
+      cartTimeout();
     } catch (error) {
       setErrorMessage(error.data.error.message)
     }
   }
 
+  const cartTimeout = () => {
+    setTimeout(() => {
+      refreshCart();
+    }, 5000)
+}
+
   useEffect(() => {
     productFetch();
     cartFetch();
-    console.log(cart)
   }, [])
   
   return (
@@ -115,7 +119,7 @@ function App() {
                 removeFromCart={removeFromCart}
                 />}
              />
-             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} handleCheckout={handleCheckout} error={errorMessage}/>} />
+             <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} handleCheckout={handleCheckout} error={errorMessage} refreshCart={refreshCart}/>} />
         </Routes>
     </Router>
     </>      
