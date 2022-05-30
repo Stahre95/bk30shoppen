@@ -9,6 +9,8 @@ import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar';
 import CartView from './components/cartView/CartView';
 import Checkout from './components/CheckoutView/checkout/Checkout.jsx';
+import Footer from './components/Footer/Footer.jsx'
+
 
 // data information
 import data from "../src/assets/json/data.json";
@@ -122,6 +124,7 @@ function App() {
              <Route path="utcheckning" element={<Checkout data={data[0]} name="utcheckning" cart={cart} order={order} handleCheckout={handleCheckout} error={errorMessage} refreshCart={refreshCart}/>} />
         </Routes>
     </Router>
+    <Footer />
     </>      
     
   );
