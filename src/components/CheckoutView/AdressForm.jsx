@@ -5,7 +5,6 @@ import { commerce } from '../../lib/commerce/commerce.js';
 //components
 import CustomTextField from './CustomTextField';
 import { Link } from 'react-router-dom';
-import { Receipt } from '@material-ui/icons';
 
 function AdressForm({ next, receiptId }) {
     const [shippingCountries, setShippingCountries] = useState([]);
@@ -41,6 +40,7 @@ function AdressForm({ next, receiptId }) {
 
     useEffect(() => {
         shippingCountriesFetch(receiptId.id);
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -49,6 +49,7 @@ function AdressForm({ next, receiptId }) {
 
     useEffect(() => {
         if (shippingSubDivision) shippingOptionsFetch(receiptId.id, shippingCountry, shippingSubDivision);
+        // eslint-disable-next-line
     }, [shippingSubDivision]);
     return (
         <>
