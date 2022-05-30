@@ -1,5 +1,3 @@
-
-
 .background-image {
    background-image: url(../../assets/img/VIK_BG.jpg);
    height: 100vh;
@@ -32,7 +30,7 @@
 }
 
 .box-klader {
-    background-image: url(../../assets/img/photo-1434682966726-19ad3a76e143.avif);
+   background-image: url(../../assets/img/photo-1434682966726-19ad3a76e143.avif);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -44,7 +42,7 @@
    border-radius: 60px / 20px;
 }
 .box-sovenir {
-    background-image: url(../../assets/img/photo-1434682881908-b43d0467b798.avif);
+   background-image: url(../../assets/img/photo-1434682881908-b43d0467b798.avif);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -57,7 +55,7 @@
 }
 
 .box-ovrigt {
-    background-image: url(../../assets/img/db1ae60d-3752-4f79-8971-06d67626b0e9.png);
+   background-image: url(../../assets/img/db1ae60d-3752-4f79-8971-06d67626b0e9.png);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -76,6 +74,3 @@
     font-size: 40px;
     font-weight: bold;
 }
-
-
-/* responsive */
