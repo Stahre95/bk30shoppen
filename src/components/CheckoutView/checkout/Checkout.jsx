@@ -33,6 +33,7 @@ function Checkout({data, name, cart, order, handleCheckout, error, refreshCart})
         }
 
         generateReceiptId();
+        // eslint-disable-next-line
     }, [cart])
 
  

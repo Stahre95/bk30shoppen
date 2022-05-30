@@ -1,5 +1,6 @@
 import { Typography, Button, Card, CardActions, CardContent} from '@material-ui/core'
-import React, { useEffect } from 'react'
+import React from 'react'
+
 
 import useStyles from './styles';
 
