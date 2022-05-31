@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/bk30shoppen/static/css/main.787b7e51.css",
-    "main.js": "/bk30shoppen/static/js/main.6df77ed5.js",
+    "main.css": "/bk30shoppen/static/css/main.eff14314.css",
+    "main.js": "/bk30shoppen/static/js/main.60e069b1.js",
     "static/js/787.d970f9e8.chunk.js": "/bk30shoppen/static/js/787.d970f9e8.chunk.js",
-    "static/media/VIK_BG.jpg": "/bk30shoppen/static/media/VIK_BG.67f6dbf1bb13919ed2ce.jpg",
     "static/media/db1ae60d-3752-4f79-8971-06d67626b0e9.png": "/bk30shoppen/static/media/db1ae60d-3752-4f79-8971-06d67626b0e9.03170a6248e11ce337f4.png",
     "static/media/bk30_shoppen_bg.png": "/bk30shoppen/static/media/bk30_shoppen_bg.451991b25d97cdbc6c02.png",
     "static/media/bk30_logo.png": "/bk30shoppen/static/media/bk30_logo.e9a224d489c6c8bc21e0.png",
     "static/media/photo-1434682881908-b43d0467b798.avif": "/bk30shoppen/static/media/photo-1434682881908-b43d0467b798.25c549e5a67cf965952c.avif",
     "static/media/photo-1434682966726-19ad3a76e143.avif": "/bk30shoppen/static/media/photo-1434682966726-19ad3a76e143.c6d9546ded0b27581343.avif",
     "index.html": "/bk30shoppen/index.html",
-    "main.787b7e51.css.map": "/bk30shoppen/static/css/main.787b7e51.css.map",
-    "main.6df77ed5.js.map": "/bk30shoppen/static/js/main.6df77ed5.js.map",
+    "main.eff14314.css.map": "/bk30shoppen/static/css/main.eff14314.css.map",
+    "main.60e069b1.js.map": "/bk30shoppen/static/js/main.60e069b1.js.map",
     "787.d970f9e8.chunk.js.map": "/bk30shoppen/static/js/787.d970f9e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.787b7e51.css",
-    "static/js/main.6df77ed5.js"
+    "static/css/main.eff14314.css",
+    "static/js/main.60e069b1.js"
   ]
 }
