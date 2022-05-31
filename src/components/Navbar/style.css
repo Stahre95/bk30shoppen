@@ -43,3 +43,45 @@
 .shoppingcart {
     color: #fff;
 }
+
+.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* responsive design  */
+
+@media screen and (min-width: 1000px){
+    .navigation-menu-icon {
+        display: none;
+    }
+   
+}
+
+@media screen and (max-width: 1000px) {
+    .navigation-menu {
+        display: none;
+    }
+    .navigation-menu-open {
+       position: absolute;
+       right: 0px;
+       top: 55px;
+       height: 100%;
+       width: 25%;
+       display: flex;
+       background-color: #3f3f3f;
+       flex-direction: column;
+       align-items: center;
+       transition: all 1s ease-in;
+    }
+    .navigation-menu-fabars {
+        justify-content: flex-end;
+        color: #fff;
+    }
+
+    .navigation-menu-faclose {
+        color: #fff;
+    }
+}  
+
