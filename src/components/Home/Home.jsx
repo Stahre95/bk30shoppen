@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <div className="background-image">
-        <h1 className='header-title'>VÄSTERÅS BK30<br /><span>Webbshop</span></h1>
+        <h1 className='header-title'>Webbshop<br /><span>Västerås BK30</span></h1>
       </div>
       <div className="grid-container">
         <div className="first-column">

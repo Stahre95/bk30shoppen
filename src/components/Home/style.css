@@ -5,15 +5,17 @@
    background-position: center;
    background-repeat: no-repeat;
    width: 100%;
+   opacity: 85%;
 }
 
 .header-title{
-    color: white;
-    padding-top: 20%;
-    padding-left: 10%;
-    font-family: 'Roboto';
+    color: #fff;
+    padding-top: 22.5%;
+    padding-left: 2.5%;
     font-size: 64px;
     justify-content: flex-start;
+    font-weight: bold;
+    text-shadow: 5px 5px #000;
 }
 
 .grid-container {
@@ -79,18 +81,13 @@
 
 @media screen and (max-width: 700px) {
    .header-title{
-      padding-top: 50%;
-      padding-right: 30%;
+      padding-top: 62.5%;
       font-size: 27px;
       text-align: center;
   }
 
   .background-image {
-   background-image: url(../../assets/img/VIK_BG.jpg);
    height: 60vh;
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
    width: 100%;
 }
 
