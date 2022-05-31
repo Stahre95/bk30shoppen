@@ -1,32 +1,24 @@
 .background-image {
    background-image: url(../../assets/img/VIK_BG.jpg);
    height: 100vh;
-   background-repeat: no-repeat;
-   background-position: center;
    background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
 }
 
 .header-title{
     color: white;
-    padding-left: 2em;
     padding-top: 20%;
+    padding-left: 10%;
     font-family: 'Roboto';
     font-size: 64px;
+    justify-content: flex-start;
 }
 
-.grid{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   width: 100%;
-}
-
-.column {
-    flex: 33%;
-}
-
-.distance {
-    height: 0;
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
 }
 
 .box-klader {
@@ -35,11 +27,10 @@
    background-position: center;
    background-size: cover;
    height: 250px;
-   width: 250px;
-   border: 1px solid #000;
+   width: 100%;
    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.75);
    border: 2px solid #fff;
-   border-radius: 60px / 20px;
+
 }
 .box-sovenir {
    background-image: url(../../assets/img/photo-1434682881908-b43d0467b798.avif);
@@ -47,11 +38,9 @@
    background-position: center;
    background-size: cover;
    height: 250px;
-   width: 250px;
-   border: 1px solid #000;
+   width: 100%;
    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.75);
    border: 2px solid #fff;
-   border-radius: 60px / 20px;
 }
 
 .box-ovrigt {
@@ -60,11 +49,9 @@
    background-position: center;
    background-size: cover;
    height: 250px;
-   width: 250px;
-   border: 1px solid #000;
+   width: 100%;
    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.75);
    border: 2px solid #fff;
-   border-radius: 60px / 20px;
 }
 
 .category-title {
@@ -73,4 +60,54 @@
     padding: 1.5em 0;
     font-size: 40px;
     font-weight: bold;
+}
+
+
+/*responsive*/
+
+@media screen and (max-width: 1000px) {
+   
+   .grid-container {
+       grid-template-columns: repeat(1, 1fr);
+   }
+
+   .first-column {
+       padding-bottom: 0;
+   }
+
+}
+
+@media screen and (max-width: 700px) {
+   .header-title{
+      padding-top: 50%;
+      padding-right: 30%;
+      font-size: 27px;
+      text-align: center;
+  }
+
+  .background-image {
+   background-image: url(../../assets/img/VIK_BG.jpg);
+   height: 60vh;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
+}
+
+.box-klader {
+   border: 2px solid #000;
+
+}
+.box-sovenir {
+   border: 2px solid #000;
+}
+
+.box-ovrigt {
+   border: 2px solid #000;
+}
+
+}
+
+@media screen and (max-height: 1000 ) {
+    
 }

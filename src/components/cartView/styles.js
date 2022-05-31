@@ -4,13 +4,15 @@ export default makeStyles((theme) => ({
   container: {
     width: '100%',
     backgroundColor: '#202020',
-    color: '#fff'
+    color: '#fff',
+    height: '100vh'
   },
   emptyCart: {
     paddingTop: '10%'
   },
   emptyContainer: {
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingTop: '10%'
   },
   emptyButton: {
     minWidth: '150px',
@@ -30,6 +32,7 @@ export default makeStyles((theme) => ({
   cardDetails: {
     display: 'flex',
     marginTop: '10%',
+    paddingTop: '10%',
     width: '100%',
     justifyContent: 'space-between',
     paddingBottom: '5%'

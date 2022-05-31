@@ -8,15 +8,15 @@ function Footer() {
     <div className="static">
       <div className='container'>
        <div className="leftColumn">
-          <Typography variant="subtitle2" color='inherit'>Kontakt</Typography>
-          <Typography variant="subtitle2" color='inherit'>021-41 51 20</Typography>
-          <Typography variant="subtitle2" color='inherit'>info@bk30.se</Typography>
+          <p>Kontakt</p>
+          <p>021-41 51 20</p>
+          <p>info@bk30.se</p>
        </div>
        <div className="middleColumn">
-          <Typography variant="body2">&copy;Västerås BK30 Webbshop 2022</Typography> 
+          <p>&copy;Västerås BK30 Webbshop 2022</p> 
        </div>
        <div className="rightColumn">
-         <Typography variant="subtitle2" color='inherit'>www.bk30.se</Typography>
+         <p>www.bk30.se</p>
        </div>
     </div>
     </div>

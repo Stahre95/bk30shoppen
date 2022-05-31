@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../Header/Header'
 import Cart from './Cart/Cart'
-import { Container, Typography, Button, Grid} from '@material-ui/core';
+import { Container, Typography, Button, Grid, CssBaseline} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import useStyles from './styles';
@@ -39,6 +39,7 @@ function CartView({data, name, cart, updateQuantity, removeFromCart, emptyCart }
   if(!cart.line_items) return 'Loading ...';
   return (
         <>
+        <CssBaseline />
         <Header data={data[name].Header}/>
         <Container className={classes.container}>
             {!cart.line_items.length ? <EmptyCart /> : <ItemsInCart />}

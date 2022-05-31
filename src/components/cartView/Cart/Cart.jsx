@@ -8,7 +8,7 @@ import useStyles from './styles';
 function Cart({ item, removeFromCart, updateQuantity}) {
     const classes = useStyles();
     return (
-        <Card>
+        <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
                 <Typography variant="underline">{item.name}</Typography>
                 <Typography variant="underline">{item.line_total.formatted_with_code}</Typography>
