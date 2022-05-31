@@ -32,16 +32,3 @@ function Home() {
 }
 
       export default Home
-
-
-/*
-<div className="column box-klader" onClick={() => {
-          navigate("/klader");
-        }}><p className='category-title'>KLÄDER</p></div>
-        <div className="column box-sovenir" onClick={() => {
-          navigate("/souvenir");
-        }}><p className='category-title'>SOUVENIR</p></div>
-        <div className="column box-ovrigt" onClick={() => {
-          navigate("/ovrigt");
-        }}><p className='category-title'>ÖVRIGT</p></div>
-        */
